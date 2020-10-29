@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',auth_views.LoginView.as_view(),name='login'),
     path('', include('management_site.urls', namespace='management_site')),
+    path('figma/', include('figma.urls')),
 ]
 
 if settings.DEBUG:
