@@ -2,14 +2,16 @@
 {% block content %}
 
 	{% for site in sites %}
-		{{site.title}}
-		<img src="{{site.photo.url}} " style="width: 250px; height: 190px;">
-		<a href="{%url site.client_url user_site='internetshop' %}">Предосмотр</a>
-		<a href="{%url site.admin_url user_site='kk' %}">Выбрать</a>
+	<div>
+		<p style="color:green" >{{site.title}} <span style="color:red" >${{site.cost}}</span></p>
+		<img style="width: 200px; height: auto" src="{{site.photo.url}}">
+        <p><a href="{% url 'management:user_site_page' site=site.id %}">Выбрать сайт</a></p>
+        <p><a href="{% url site.client_url user_site='wefw' %}">Предасмотр сайт</a></p>
+	</div>
 	{% endfor %}
 
 	{% for category in categories %}
-		<p>{{category.title}}</p>
+		<a href="{% url 'management:site_list_page' category=category.id %}">{{category.title}}</a>
 	{% endfor %}
 
 {% endblock %}

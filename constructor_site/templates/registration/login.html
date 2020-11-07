@@ -1,8 +1,8 @@
 <form action="{% url 'login' %}" method="post">
 	{% csrf_token %}
-	<p>login</p>
+	<p>Логин</p>
 	<p>{{form.username}}</p>
-	<p>password</p>
+	<p>Пароль</p>
 	<p>{{form.password}}</p>
     {% if form.errors %}
     <h6>Your login or password is error</h6>

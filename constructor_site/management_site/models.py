@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# Категория, к которой относятся сайты на первой странице
+# Список категории
 class Category(models.Model):
     title = models.CharField(max_length=120)
 
@@ -10,7 +10,7 @@ class Category(models.Model):
         return self.title
 
 
-# Список сайтовКатегория, к которой относятся сайты на первой странице
+# Список сайтов
 class Site(models.Model):
     title = models.CharField(max_length=120)
     cost = models.DecimalField(max_digits=5, decimal_places=2,null=True)
@@ -24,14 +24,15 @@ class Site(models.Model):
     def __str__(self):
         return self.title
 
+
 # Списки сайтов, выбранные пользователем
 class UserSite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
-    url_address = models.CharField(max_length=120, blank=True)
+    url_address = models.SlugField(max_length=120, unique=True)
 
 
-# список заявок
+# Список заявок
 class Demand(models.Model):
     title = models.CharField(max_length=50)
     phone = models.CharField(max_length=50)

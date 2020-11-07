@@ -23,7 +23,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',auth_views.LoginView.as_view(),name='login'),
     path('', include('management_site.urls', namespace='management_site')),
-    path('<str:user_site>/figma', include('figma.urls')),
+    path('figma/', include('figma.urls')),
+    path('<str:user_site>/sale/clothes/', include('sale_clothes.urls')),
+    path('crm/', include('mini_crm.urls')),
 ]
 
 if settings.DEBUG:

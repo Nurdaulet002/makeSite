@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'management_site',
     'figma',
+    'sale_clothes',
+    'mini_crm',
 ]
 
 MIDDLEWARE = [
