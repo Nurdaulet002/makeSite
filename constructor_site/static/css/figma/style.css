@@ -7,7 +7,7 @@
 
 
 /* Template default CSS
-/----------------------------------------/
+/*----------------------------------------*/
 
 html,
 body {
@@ -104,7 +104,7 @@ ol {
 }
 
 .spad {
-	padding-top: 80px;
+	padding-top: 60px;
 	padding-bottom: 80px;
 }
 .border-b{
@@ -348,9 +348,11 @@ ol {
 	/*color: #8f8f8f;
 	margin-bottom: 25px;
 	line-height: 1.8;*/
-	color: #000;
-    margin-bottom: 5px;
-    line-height: 1.7;
+	color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    text-align: justify;
 }
 
 .accordion-area .panel-body p span {
@@ -374,7 +376,7 @@ ol {
 ---------------------*/
 
 .header-top {
-	padding: 18px 0 14px;
+	padding: 18px 0 25px;
 }
 
 .site-logo {
@@ -953,7 +955,7 @@ ol {
 	float: right;
 	padding-left: 10px;
 	overflow: hidden;
-	/font-weight: 700;/
+	/*font-weight: 700;*/
 	color: #111111;
 	font-size:13px;
 	margin: 5px 0;
@@ -1044,29 +1046,29 @@ ol {
 }
 
  #img-content{
-        width: 220px;
-        margin: 0 auto;
-        height: 330px;
-        border: 1px solid #f7f8f9;
-        border-radius: 10px;
-        background-image: url(../img/canvas/PHONE11PRO.png);
-        background-repeat: no-repeat;
-		 background-size: cover;
+ 	    width: 220px;
+	    margin: 0 auto;
+	    height: 330px;
+	    border: 1px solid #f7f8f9;
+	    border-radius: 10px;
+	    background-image: url(../img/phonecases/PHONE11PRO.png);
+	    background-repeat: no-repeat;
+	    background-size: cover;
       }
       #img{
         margin: 5px;
-        width: 208px;
-        height: 318px;
-        overflow: hidden;
-        border-radius: 10%; 
+	    width: 208px;
+	    height: 318px;
+	    overflow: hidden;
+	    border-radius: 10%;
       }
-      canvas{
-        z-index: -1;
-		width: 204px!important;
-		height: 321px!important;
-      }
+      canvas {
+	    z-index: -1;
+	    width: 204px!important;
+	    height: 321px!important;
+		}
 .background{
-	/background: #f7f8f9;/
+	/* background: #f7f8f9; */
     padding: 25px;
 	margin-bottom: 25px;
 }
@@ -2265,6 +2267,62 @@ ol {
 .custom-file{
 	margin-bottom:1rem;
 }
+
+.font-aiv2{
+	font-family: "Porcelain";
+}
+.font-anastasiaScriptC{
+	font-family: "AnastasiaScriptC";
+}
+
+.font-SharonAP{
+	font-family: "SharonAP";
+}
+.font-style{
+	text-align: left;
+    height: 30px;
+    line-height: 20px;
+    width: 100%;
+    font-size: 25px;
+    font-weight: 600;
+}
+.color-gold{
+	color: #ECBA77;
+}
+.frcontainer{
+	padding: 30px 0;
+    border-top: 1px solid #eaecef;
+    border-bottom: 1px solid #eaecef;
+    position: relative;
+}
+.icon-slaider{
+	font-size: 35px;
+    width: 48px;
+    float: left;
+    margin-right: 8px;
+    color: #e60044;
+}
+.media-body{
+	padding-top: 4%;
+	text-align: left;
+    padding-left: 0px;
+    line-height: 16px;
+    font-size: 12px;
+}
+.media-heading{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+}
+.media{
+	width: 80%;
+	margin:0 auto;
+}
+video{
+	width: 100%;
+	height: 600px;
+}
 /* ----------------
   Responsive
 ---------------------*/
@@ -2454,6 +2512,16 @@ ol {
 	.background-btn{
 		display:block;
 	}
+	video{
+		width: 100%;
+		height: 280px;
+	}
+	.media{
+		padding-bottom: 20px;
+	}
+	.related-product-section{
+		padding-bottom: 10px;
+	}
 }
 
 /* Medium Mobile :480px. */
@@ -2471,6 +2539,13 @@ ol {
 	}
 	.background-btn{
 		display:block;
+	}
+	video{
+		width: 100%;
+		height: 280px;
+	}
+	.media{
+		padding-bottom: 20px;
 	}
 }
 
@@ -2513,4 +2588,34 @@ ol {
 	.social-links a span {
 		display: none;
 	}
+	video{
+		width: 100%;
+		height: 250px;
+	}
+	.media{
+		padding-bottom: 20px;
+	}
+}
+
+
+.add-img{
+  height: 250px;
+}
+.add{
+  width: 100%;
+  height: 250px;
+  border: 1px dashed #e60044;
+  cursor: pointer;
+  color: #e60044;
+  text-align: center;
+}
+.add-images{
+  padding-top: 35%;
+
+}
+.add-images label{
+  display: block;
+}
+.plus{
+  font-size: 30px;
 }

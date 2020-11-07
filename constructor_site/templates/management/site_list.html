@@ -3,7 +3,9 @@
 
 	{% for site in sites %}
 		{{site.title}}
-		<img src="{{site.photo.url}}">
+		<img src="{{site.photo.url}} " style="width: 250px; height: 190px;">
+		<a href="{%url site.client_url user_site='internetshop' %}">Предосмотр</a>
+		<a href="{%url site.admin_url user_site='kk' %}">Выбрать</a>
 	{% endfor %}
 
 	{% for category in categories %}
