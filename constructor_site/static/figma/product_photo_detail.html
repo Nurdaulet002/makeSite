@@ -36,7 +36,12 @@
               <!-- product section -->
             <form action="" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
-              
+              <div hidden>
+                {{product_form.is_top}}
+                {{product_form.author}}
+                {{product_form.category}}
+                {{product_form.kind}}
+              </div>
               <section class="product-section">
                 <div class="container">
                   {{ product_form.errors }}

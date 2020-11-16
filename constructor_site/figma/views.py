@@ -5,13 +5,13 @@ from .models import Good, Category
 from.forms import CategoryForm, GoodForm
 
 
-# FFFF
+#
 class ClientIndexView(TemplateResponseMixin,View):
     template_name = 'figma/client-site/index.html'
 
-    def get (self, request, *args, **kwards):
-        user_site = self.kwards.get('user_site', None)
-        category = self.kwards.get('category', None)
+    def get (self, request, *args, **kwargs):
+        user_site = self.kwargs.get('user_site', None)
+        category = self.kwargs.get('category', None)
         categories = Category.objects.all()
         goods = Good.objects.filter(top=True)
         if category:
@@ -43,13 +43,15 @@ class ConstructorIndexView(TemplateResponseMixin,View):
             'categories':categories, 'goods': goods})
 
 
-class CategoryCreateview(View):
+class GoodCreateview(View):
 
-    def post (self, request, user_site=None):
-        category_form = CategoryForm(request.POST)
-        if category_form.is_valid():
-            category_form.save()
-            return redirect('figma:constructor', user_site=user_site)
+    def get(self, request, user_site=None):
+       user_site_base = UserSite.objects.get(url_address=user_site)
+       good_obj = Good.objects.get(id=28)
+       good_obj.pk = None
+       good_obj.user_site = user_site_base
+       good_obj.save()
+       return redirect('figma:constructor', user_site=user_site)
         
 
 class GoodCreateview(View):
@@ -70,7 +72,7 @@ class CategoryDeleteView(View):
 
 
 class GoodDeleteView(View):
-    
+
     def get (self, request, user_site): 
         good_id = request.GET.get('good_id')
         Good.objects.get(id=good_id).delete()
